@@ -1,0 +1,43 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Rating</th>
+            <th>Company ID</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each customers}}
+        <tr>
+            <td>{{this.customer_id}}</td>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td>{{this.rating}}</td>
+            <td>{{this.company_name}}</td>
+            <td>
+                <a href="/update-customers//{{this.customer_id}}" class="btn btn-primary btn-sm">Update</a>
+            </td>
+            <td>
+                <a href="/delete-customers//{{this.customer_id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <form method="post">
+        <div>
+            <label>Search for customer by first/last name</label>
+            <input type="text" name="name" class="form-control" />
+            <button type="submit" class="btn btn-light">Search</button>
+        </div>
+    </form>
+</table>
+<a href="/create-customers" class="btn btn-dark btn-sm">Add New Customer</a>
+{{/block}}
+
+{{/extends}}

@@ -1,0 +1,9 @@
+node_modules
+.env 
+
+add to .env file:
+
+DB_HOST=localhost
+DB_USER=root
+DB_NAME=crm
+DB_PASSWORD=
